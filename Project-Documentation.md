@@ -1,1 +1,150 @@
-IyBBSSBTZW1lc3RlciBQcm9qZWN0IOKAlCBQaGlzaGluZyBFbWFpbCBEZXRlY3Rpb24KIyMgUHJvamVjdCBEb2N1bWVudGF0aW9uIChsaXZpbmcgZG9jdW1lbnQg4oCUIHVwZGF0ZWQgYWZ0ZXIgZXZlcnkgYnVpbGQgc3RlcCkKCioqVGVhbToqKiBNdWhhbW1hZCBSYXlhbiBCaW4gV2FxYXIsIEFiZHVsbGFoIFNhamlkLCBNdWhhbW1hZCBNdWp0YWJhLCBNdXphbWlsIFNoYWZpcXVlLCBIdXNuYWluLCBNdWhhbW1hZCBIYXNzYWFuCioqU3VibWl0dGVkIHRvOioqIE5vb3IgRmF0aW1hCioqUGxhdGZvcm06KiogR29vZ2xlIENvbGFiICh0cmFpbmluZykgwrcgU3RyZWFtbGl0IChhcHAsIGxhdGVyIHN0YWdlKQoqKlN0YXR1czoqKiBNb2RlbCBhdWRpdGlvbnMgaW4gcHJvZ3Jlc3MgKFN0ZXAgOCBvZiB0aGUgYnVpbGQpCgotLS0KCiMjIDEuIFByb2plY3QgT3ZlcnZpZXcKCkEgbWFjaGluZS1sZWFybmluZyBzeXN0ZW0gdGhhdCBjbGFzc2lmaWVzIGVtYWlscyBhcyAqKlNhZmUqKiBvciAqKlBoaXNoaW5nKiosIGJ1aWx0IGluIHRocmVlIGxheWVycyBiZXlvbmQgYSBzdGFuZGFyZCBkYXRhc2V0IHByb2plY3Q6CgoxLiAqKk1vZGVsIGxheWVyKiog4oCUIGEgZmFpciwgZG9jdW1lbnRlZCBjb21wYXJpc29uIG9mIGNsYXNzaWMgTUwgbW9kZWxzLCBhbiBlbnNlbWJsZSwgYW5kIGEgZmluZS10dW5lZCB0cmFuc2Zvcm1lciAoRGlzdGlsQkVSVCkgb24gaWRlbnRpY2FsIGRhdGEgc3BsaXRzLgoyLiAqKlJvYnVzdG5lc3MgbGF5ZXIqKiDigJQgYW4gYWR2ZXJzYXJpYWwgb2JmdXNjYXRpb24gdGVzdCAoZGlzZ3Vpc2VkIHNjYW0gZW1haWxzKSBhbmQgYSBzZWxmLW1hZGUgbG9jYWwgdGVzdCBzZXQgb2YgUGFraXN0YW5pIHNjYW0gZW1haWxzIChKYXp6Q2FzaC9FYXN5cGFpc2EgbHVyZXMsIFJvbWFuIFVyZHUpLCB3cml0dGVuIGJ5IHRoZSB0ZWFtIGFzIHRlc3QgZml4dHVyZXMgb25seS4KMy4gKipQcm9kdWN0IGxheWVyKiog4oCUIGEgd29ya2luZyBhcHAgd2l0aCB0aHJlZSBpbnB1dCBtb2RlcyAocGFzdGUgYW4gZW1haWwsIHVwbG9hZCBhbiAuZW1sIGZpbGUsIGNvbm5lY3QgYSBHbWFpbCBhY2NvdW50IHJlYWQtb25seSkgc28gdGhlIHRlYWNoZXIgY2FuIHRlc3QgdGhlIHN5c3RlbSBvbiBhIHJlYWwgaW5ib3gsIHdpdGggcmlzayBzY29yZXMsIGV4cGxhbmF0aW9uIHBhbmVscywgbGluayBpbnNwZWN0aW9uLCBhbmQgc2VuZGVyIGNoZWNrcy4KCiMjIDIuIERhdGFzZXQKCi0gKipTb3VyY2U6KiogIlBoaXNoaW5nIEVtYWlsIERldGVjdGlvbiIgZGF0YXNldCAoS2FnZ2xlKSwgbG9hZGVkIHZpYSBpdHMgSHVnZ2luZyBGYWNlIG1pcnJvciBgbXJpYWR1ci9waGlzaGluZy1lbWFpbC1kYXRhc2V0YCBmb3IgcmVwcm9kdWNpYmlsaXR5IGluIENvbGFiLgotICoqUmF3IHNpemU6KiogMTgsNjUwIHJvd3MuCi0gKipDb2x1bW5zIChhcyBhY3R1YWxseSBmb3VuZCk6KiogYEVtYWlsIFRleHRgLCBgRW1haWwgVHlwZWAg4oCUIHBsdXMgYSBqdW5rIGluZGV4IGNvbHVtbiAoYFVubmFtZWQ6IDBgKS4gVGhlcmUgYXJlICoqbm8qKiBzZXBhcmF0ZSBzZW5kZXIvc3ViamVjdC9VUkwgY29sdW1uczsgYWxsIHNpZ25hbHMgbGl2ZSBpbnNpZGUgdGhlIGVtYWlsIHRleHQuIFRleHQgYXJyaXZlcyBhbHJlYWR5IGxvd2VyY2FzZWQgYW5kIHRva2VuaXplZC4KLSAqKlJhdyBjbGFzcyBiYWxhbmNlOioqIFNhZmUgRW1haWwgMTEsMzIyICg2MC43JSkgwrcgUGhpc2hpbmcgRW1haWwgNywzMjggKDM5LjMlKS4KCiMjIDMuIERhdGEgQ2xlYW5pbmcgKFN0ZXAgNCDigJQgZG9uZSwgdmVyaWZpZWQpCgp8IEFjdGlvbiB8IFJvd3MgYWZmZWN0ZWQgfAp8LS0tfC0tLXwKfCBEcm9wcGVkIGp1bmsgaW5kZXggY29sdW1uIChgVW5uYW1lZDogMGApIHwg4oCUIHwKfCBEcm9wcGVkIG1pc3NpbmcgZW1haWwgdGV4dHMgfCAxNiB8CnwgRHJvcHBlZCBqdW5rIHJvd3Mgd2hvc2UgdGV4dCBpcyBsaXRlcmFsbHkgYG51bGxgIC8gYGVtcHR5YCAvIGJsYW5rIHwgNTM2IHwKfCBEcm9wcGVkIGV4YWN0IGR1cGxpY2F0ZSBlbWFpbHMgKHByZXZlbnRzIHRyYWluL3Rlc3QgbGVha2FnZSkgfCB+NTYzIHwKfCAqKkZpbmFsIGNsZWFuIGRhdGFzZXQqKiB8ICoqMTcsNTM1IHJvd3MqKiB8CgotIEZpbmFsIGJhbGFuY2U6IFNhZmUgMTAsOTc5ICg2Mi42JSkgwrcgUGhpc2hpbmcgNiw1NTYgKDM3LjQlKS4KLSBMYWJlbHMgbWFwcGVkOiBTYWZlIEVtYWlsIOKGkiAwLCBQaGlzaGluZyBFbWFpbCDihpIgMSAocGhpc2hpbmcgaXMgdGhlIHBvc2l0aXZlIGNsYXNzKS4KLSBDbGVhbiBkYXRhc2V0IGV4cG9ydGVkIGFzIGBwaGlzaGluZ19jbGVhbi5jc3ZgIChncm91cCdzIHNoYXJlZCBmaWxlIG9mIHJlY29yZCkuCgojIyA0LiBEYXRhIFNwbGl0IChTdGVwIDUg4oCUIGRvbmUsIHZlcmlmaWVkKQoKKio4MCAvIDEwIC8gMTAg4oCUIFRyYWluIC8gVmFsaWRhdGlvbiAvIFRlc3QqKiwgc3RyYXRpZmllZCAoaWRlbnRpY2FsIDM3LjQlIHBoaXNoaW5nIHNoYXJlIGluIGFsbCB0aHJlZSksIGByYW5kb21fc3RhdGUgPSA0MmAgZm9yIHJlcHJvZHVjaWJpbGl0eS4KCnwgU2V0IHwgUm93cyB8IFJvbGUgfAp8LS0tfC0tLXwtLS18CnwgVHJhaW4gfCAxNCwwMjcgfCBNb2RlbHMgbGVhcm4gZnJvbSB0aGlzIHwKfCBWYWxpZGF0aW9uIHwgMSw3NTQgfCBNb2RlbCBzZWxlY3Rpb24sIHRocmVzaG9sZCB0dW5pbmcsIGFsbCBjb21wYXJpc29ucyB8CnwgVGVzdCB8IDEsNzU0IHwgKipMb2NrZWQqKiDigJQgdG91Y2hlZCBvbmNlLCBmb3IgdGhlIGZpbmFsIHJlcG9ydGVkIHNjb3JlcyB8CgoqTWV0aG9kb2xvZ3kgbm90ZToqIG1vZGVsIHNlbGVjdGlvbiBpcyBkb25lIG9uIHZhbGlkYXRpb24gb25seSwgc28gdGhlIHRlc3Qgc2V0IHN0YXlzIGFuIHVuYmlhc2VkIGZpbmFsIGV4YW0uIERpc3RpbEJFUlQgZmluZS10dW5pbmcgYWxzbyByZXF1aXJlcyBhIHZhbGlkYXRpb24gc2V0IChjaGVja3BvaW50IHNlbGVjdGlvbiAvIGVhcmx5IHN0b3BwaW5nKS4KCiMjIDUuIEV2YWx1YXRpb24gTWV0cmljcwoKQWNjdXJhY3ksIFByZWNpc2lvbiwgUmVjYWxsLCBGMSwgYW5kIHRoZSBjb25mdXNpb24gbWF0cml4IOKAlCBhbGwgY29tcHV0ZWQgb24gdmFsaWRhdGlvbiBkdXJpbmcgZGV2ZWxvcG1lbnQuCioqSGVhZGxpbmUgbWV0cmljOiBSZWNhbGwqKiAoZnJhY3Rpb24gb2YgcGhpc2hpbmcgZW1haWxzIGNhdWdodCksIGJlY2F1c2UgYSBtaXNzZWQgc2NhbSAoZmFsc2UgbmVnYXRpdmUpIGNvc3RzIG1vcmUgdGhhbiBhIGZhbHNlIGFsYXJtLiBUaGUgZGFuZ2Vyb3VzIGNvbmZ1c2lvbi1tYXRyaXggY2VsbCBpcyBGTiAoYm90dG9tLWxlZnQpLgoKIyMgNi4gRmVhdHVyZSBFbmdpbmVlcmluZyBQbGFuCgotICoqUm91bmQgMToqKiB3b3JkIFRGLUlERiAoMeKAkzIgZ3JhbXMsIDUsMDAwIGZlYXR1cmVzKS4KLSAqKlJvdW5kIDI6Kiogd29yZCBURi1JREYgKyBjaGFyYWN0ZXIgVEYtSURGIChgY2hhcl93YmAsIDPigJM1IGdyYW1zLCA1LDAwMCBmZWF0dXJlcykg4oCUIGNoYXJhY3RlciBjaHVua3MgY2F0Y2ggb2JmdXNjYXRlZCB3b3JkcyAoYGZyMzNgLCBgdmVyMWZ5YCkuCi0gKipSb3VuZCAzIChwbGFubmVkKToqKiBoYW5kY3JhZnRlZCBpbmRpY2F0b3IgZmVhdHVyZXMgZnVzZWQgd2l0aCBURi1JREYg4oCUIFVSTCBjb3VudCBhbmQgVVJMIGxleGljYWwgZmVhdHVyZXMgKGxlbmd0aCwgZGlnaXQgcmF0aW8sIHN1YmRvbWFpbiBkZXB0aCwgZW50cm9weSwgYEBgIHRyaWNrcyksIHVyZ2VuY3kta2V5d29yZCBjb3VudCwgQUxMLUNBUFMgcmF0aW8sIGV4Y2xhbWF0aW9uIGRlbnNpdHksIGdlbmVyaWMtZ3JlZXRpbmcgZmxhZywgYW5kIGEgKipicmFuZC1pbXBlcnNvbmF0aW9uIGZlYXR1cmUqKiAoZnV6enkgZGlzdGFuY2UgYmV0d2VlbiBsaW5rIGRvbWFpbnMgYW5kIGtub3duIGJyYW5kcywgaW5jbC4gUGFraXN0YW5pIGJhbmtzL3dhbGxldHMpLgotICoqQWJsYXRpb246KiogdGV4dC1vbmx5IHZzIGluZGljYXRvcnMtb25seSB2cyBoeWJyaWQsIHRvIHNob3cgd2hpY2ggc2lnbmFsIGNhcnJpZXMgdGhlIGRldGVjdGlvbi4KCiMjIDcuIFJlc3VsdHMgU28gRmFyIChWYWxpZGF0aW9uIFNldCkKCiMjIyBCYXNlbGluZSDigJQgTG9naXN0aWMgUmVncmVzc2lvbiwgd29yZCBURi1JREYgKFN0ZXAgNikKQWNjdXJhY3kgMC45Nzc4IMK3IFByZWNpc2lvbiAwLjk3NTMgwrcgUmVjYWxsIDAuOTY0OSDCtyBGMSAwLjk3MDEKQ29uZnVzaW9uIG1hdHJpeDogVE4gMTA4MiDCtyBGUCAxNiDCtyBGTiAyMyDCtyBUUCA2MzMgKDIzIHNjYW1zIG1pc3NlZCBvZiA2NTYpCgojIyMgUm91bmQgMSDigJQgd29yZCBURi1JREYsIGZvdXIgbW9kZWxzIChTdGVwIDcpCnwgTW9kZWwgfCBBY2N1cmFjeSB8IFByZWNpc2lvbiB8IFJlY2FsbCB8IEYxIHwKfC0tLXwtLS18LS0tfC0tLXwtLS18CnwgKipMaW5lYXIgU1ZNKiogfCAqKjAuOTgwMCoqIHwgMC45NzU1IHwgKiowLjk3MTAqKiB8ICoqMC45NzMzKiogfAp8IExvZ2lzdGljIFJlZ3Jlc3Npb24gfCAwLjk3NzggfCAwLjk3NTMgfCAwLjk2NDkgfCAwLjk3MDEgfAp8IFJhbmRvbSBGb3Jlc3QgfCAwLjk3NDMgfCAqKjAuOTc5NioqIHwgMC45NTEyIHwgMC45NjUyIHwKfCBOYWl2ZSBCYXllcyB8IDAuOTY1OCB8IDAuOTcxNSB8IDAuOTM2MCB8IDAuOTUzNCB8CgoqRmluZGluZ3M6KiBMaW5lYXIgU1ZNIGxlYWRzIHJvdW5kIDEuIFJhbmRvbSBGb3Jlc3QgaGFzIHRoZSBiZXN0IHByZWNpc2lvbiAoZmV3ZXN0IGZhbHNlIGFsYXJtcykgYnV0IHdlYWtlciByZWNhbGwuIE5haXZlIEJheWVzIGlzIHRoZSB3ZWFrZXN0IGRldGVjdG9yIChyZWNhbGwgMC45MzYg4oCUIH40MiBzY2FtcyBtaXNzZWQpOiBzaW1wbGUgd29yZCBjb3VudGluZyBoYXMgYSBjZWlsaW5nLgoKIyMjIFJvdW5kIDIg4oCUIHdvcmQgKyBjaGFyIFRGLUlERiAoU3RlcCA4KQp8IE1vZGVsIHwgQWNjdXJhY3kgfCBQcmVjaXNpb24gfCBSZWNhbGwgfCBGMSB8CnwtLS18LS0tfC0tLXwtLS18LS0tfAp8ICoqTGluZWFyIFNWTSAod29yZCtjaGFyKSoqIHwgKiowLjk4NTIqKiB8IDAuOTgwMiB8ICoqMC45ODAyKiogfCAqKjAuOTgwMioqIHwKfCBMb2dpc3RpYyBSZWdyZXNzaW9uICh3b3JkK2NoYXIpIHwgMC45ODA2IHwgMC45ODE0IHwgMC45NjY1IHwgMC45NzM5IHwKfCBSYW5kb20gRm9yZXN0ICh3b3JkK2NoYXIpIHwgMC45NzY2IHwgMC45Njk1IHwgMC45NjgwIHwgMC45Njg3IHwKfCBOYWl2ZSBCYXllcyAod29yZCtjaGFyKSB8IDAuOTY2OSB8IDAuOTQ3NiB8IDAuOTY0OSB8IDAuOTU2MiB8CgoqQWJsYXRpb24gZmluZGluZyAoUm91bmQgMSDihpIgUm91bmQgMik6KiBhZGRpbmcgY2hhcmFjdGVyIG4tZ3JhbXMgaW1wcm92ZWQgKipldmVyeSoqIG1vZGVsJ3MgcmVjYWxsLiBTVk06IEYxIDAuOTczMyDihpIgMC45ODAyLCBtaXNzZWQgc2NhbXMgMTkg4oaSIH4xMyAoRlAgYWxzbyB+MTMpLiBOYWl2ZSBCYXllcyByZWNhbGwganVtcGVkIDAuOTM2MCDihpIgMC45NjQ5IOKAlCB0aGUgbGV0dGVyLWNodW5rIGZlYXR1cmVzIGhlbHAgdGhlIHdlYWtlc3QgcmVhZGVyIG1vc3QuIENvbmNsdXNpb24gc28gZmFyOiBjaGFyYWN0ZXIgZmVhdHVyZXMgZWFybiB0aGVpciBwbGFjZTsgTGluZWFyIFNWTSAod29yZCtjaGFyKSBpcyB0aGUgY3VycmVudCBjaGFtcGlvbi4KCiMjIDguIFBsYW5uZWQgRW5oYW5jZW1lbnRzIChhZ3JlZWQgMjAyNi0xMS0yMykKCi0gKipUaHJlc2hvbGQgdHVuaW5nKiogb24gdmFsaWRhdGlvbiAocHJlY2lzaW9u4oCTcmVjYWxsIGN1cnZlKTogZGVsaWJlcmF0ZWx5IHRyYWRlIGEgbGl0dGxlIHByZWNpc2lvbiBmb3IgaGlnaGVyIHJlY2FsbDsgdGhlIGFwcCBleHBvc2VzIHRoaXMgYXMgYSBzZW5zaXRpdml0eSBjb250cm9sLgotICoqUHJvYmFiaWxpdHkgY2FsaWJyYXRpb24qKiBzbyB0aGUgYXBwJ3MgcmlzayBwZXJjZW50YWdlIGlzIG1lYW5pbmdmdWwuCi0gKipFbnNlbWJsZSoqIChzb2Z0IHZvdGluZyBvdmVyIHRoZSB0b3AgY2xhc3NpYyBtb2RlbHMpLgotICoqRGlzdGlsQkVSVCBmaW5lLXR1bmUqKiAoMyBlcG9jaHMsIENvbGFiIEdQVSkgb24gdGhlIHNhbWUgc3BsaXRzOyBmaW5hbCBjb21wYXJpc29uIHRhYmxlIGNsYXNzaWMgdnMgdHJhbnNmb3JtZXIuCi0gKipUd28tc3RhZ2UgY2FzY2FkZSBpbiB0aGUgYXBwOioqIGZhc3QgY2xhc3NpYyBtb2RlbCBzY3JlZW5zIGV2ZXJ5dGhpbmc7IG9ubHkgdW5jZXJ0YWluIGNhc2VzIChtaWQtcmFuZ2UgcmlzaykgZ28gdG8gRGlzdGlsQkVSVC4KLSAqKkFwcC1vbmx5IHNpZ25hbHM6KiogR21haWwgYXV0aGVudGljYXRpb24gcmVzdWx0cyAoU1BGL0RLSU0vRE1BUkMpIGFzIHZlcmRpY3QgZXZpZGVuY2Ug4oCUIHVuYXZhaWxhYmxlIHRvIGRhdGFzZXQtb25seSBwcm9qZWN0cy4KLSAqKkNvcnJlY3Rpb24gbG9vcDoqKiB0ZWFjaGVyIG92ZXJyaWRlcyBpbiB0aGUgYXBwIGFyZSBsb2dnZWQgYXMgZnV0dXJlIHRyYWluaW5nIGRhdGEuCgojIyA5LiBBZHZlcnNhcmlhbCAmIExvY2FsIFRlc3RpbmcgKHBsYW5uZWQpCgotICoqQWR2ZXJzYXJpYWwgdGVzdDoqKiB0YWtlIHBoaXNoaW5nIGVtYWlscyB0aGUgY2hhbXBpb24gbW9kZWwgY2F0Y2hlczsgb2JmdXNjYXRlIHRoZW0gKGxlZXRzcGVhaywgc3BhY2VkIGxldHRlcnMsIGhvbW9nbHlwaC9sb29rLWFsaWtlIGRvbWFpbnMpOyByZS1tZWFzdXJlIHJlY2FsbC4gUXVlc3Rpb246IGRvZXMgYSBjaGVhcCBkaXNndWlzZSBkZWZlYXQgdGhlIGRldGVjdG9yLCBhbmQgZG8gY2hhciBmZWF0dXJlcyBkZWZlbmQgaXQ/Ci0gKipMb2NhbCB0ZXN0IHNldDoqKiB+MzAgdGVhbS13cml0dGVuIHBoaXNoaW5nIGVtYWlscyAoSmF6ekNhc2gvRWFzeXBhaXNhLCBiYW5rIGx1cmVzLCBwcml6ZSBzY2FtczsgRW5nbGlzaCArIFJvbWFuIFVyZHUpICsgfjE1IHRlYW0td3JpdHRlbiBzYWZlIGVtYWlscy4gQWxzbyBwbGFudGVkIGluIGEgZGVtbyBHbWFpbCBpbmJveCBmb3IgdGhlIGxpdmUgYXBwIGRlbW9uc3RyYXRpb24uICpUaGVzZSBhcmUgdGVzdCBmaXh0dXJlcywgc2VudCBvbmx5IHRvIHRoZSB0ZWFtJ3Mgb3duIHRlc3QgYWNjb3VudCDigJQgbmV2ZXIgdG8gcmVhbCBwZW9wbGUuKgotICoqRXJyb3IgYW5hbHlzaXM6KiogcmVhZCB0aGUgY2hhbXBpb24ncyBmYWxzZSBuZWdhdGl2ZXMgYW5kIGZhbHNlIHBvc2l0aXZlczsgZG9jdW1lbnQgdGhlIGZhaWx1cmUgcGF0dGVybnMuCgojIyAxMC4gQXBwbGljYXRpb24gKHBsYW5uZWQg4oCUIGFmdGVyIHRoZSBtb2RlbCBpcyBsb2NrZWQpCgpTdHJlYW1saXQgYXBwLCB0aHJlZSBpbnB1dCBtb2RlczoKMS4gKipQYXN0ZSBlbWFpbCB0ZXh0Kiog4oaSIGluc3RhbnQgdmVyZGljdC4KMi4gKipVcGxvYWQgLmVtbCoqIOKGkiB2ZXJkaWN0IHdpdGggZnVsbCBpbmRpY2F0b3IgcGFuZWxzLgozLiAqKkNvbm5lY3QgR21haWwqKiAocmVhZC1vbmx5IE9BdXRoOyBydW5zIGxvY2FsbHk7IG5vdGhpbmcgc3RvcmVkKSDihpIgc2NhbiByZWNlbnQgaW5ib3gsIHNvcnQgYnkgcmlzaywgQ1NWIGV4cG9ydC4KClBhbmVsczogcmlzayBtZXRlciB3aXRoIGJhbmRzIMK3ICJXaHkiIHBhbmVsICh0b3AgY29udHJpYnV0aW5nIHdvcmRzIGhpZ2hsaWdodGVkKSDCtyBsaW5rIGluc3BlY3RvciAocmVhbCBkZXN0aW5hdGlvbiBkb21haW5zLCBsb29rLWFsaWtlIGZsYWdzKSDCtyBzZW5kZXIgY2hlY2sgKG5hbWUvZG9tYWluIG1pc21hdGNoKSDCtyB1cmdlbmN5L2x1cmUgZGV0ZWN0b3IgaW5jbC4gUGFraXN0YW5pLXNjYW0ga2V5d29yZCBwYWNrIMK3IGluYm94IGRhc2hib2FyZC4KCiMjIDExLiBCdWlsZCBMb2cKCnwgRGF0ZSB8IFN0ZXAgfCBPdXRjb21lIHwKfC0tLXwtLS18LS0tfAp8IDIwMjYtMTEtMTkgfCBQcm9wb3NhbCBkZWxpdmVyZWQgfCBXb3JkIHByb3Bvc2FsIHRvIE5vb3IgRmF0aW1hIChkYXRhc2V0IGNvcnJlY3Rpb24gbm90ZWQgc2VwYXJhdGVseSkgfAp8IDIwMjYtMTEtMjMgfCBTY29wZSB1cGdyYWRlZCB8IEdtYWlsIGFwcCArIHVwZ3JhZGVkIE1MICsgYWR2ZXJzYXJpYWwvbG9jYWwgdGVzdGluZyBhZ3JlZWQgfAp8IDIwMjYtMTEtMjMgfCBTdGVwcyAx4oCTMyB8IENvbGFiIHNldCB1cCAocGFuZGFzIDIuMi4zLCBza2xlYXJuIDEuNi4xKTsgZGF0YXNldCBsb2FkZWQgYW5kIGluc3BlY3RlZCB8CnwgMjAyNi0xMS0yMyB8IFN0ZXBzIDTigJM1IHwgQ2xlYW5lZCB0byAxNyw1MzUgcm93czsgODAvMTAvMTAgc3RyYXRpZmllZCBzcGxpdCBmcm96ZW4gfAp8IDIwMjYtMTEtMjMgfCBTdGVwcyA24oCTNyB8IExSIGJhc2VsaW5lICsgcm91bmQtMSByYWNlIGNvbXBsZXRlIChTVk0gbGVhZHMpIHwKfCAyMDI2LTExLTIzIHwgU3RlcCA4IHwgUm91bmQgMiAod29yZCtjaGFyKSBydW5uaW5nIHwKCiMjIDEyLiBTYXZpbmcgdGhlIFByb2plY3QgJiBSdW5uaW5nIEl0IExvY2FsbHkKCioqR29sZGVuIHJ1bGU6KiogZXZlcnl0aGluZyBpbnNpZGUgQ29sYWIncyBgL2NvbnRlbnRgICoqdmFuaXNoZXMgd2hlbiB0aGUgc2Vzc2lvbiBlbmRzKiouIE9ubHkgdGhyZWUgdGhpbmdzIGFyZSBwZXJtYW5lbnQ6IEdvb2dsZSBEcml2ZSwgZG93bmxvYWRlZCBmaWxlcywgR2l0SHViLgoKKipTYXZlIGZyb20gQ29sYWI6KioKMS4gTm90ZWJvb2s6IGBGaWxlIOKGkiBTYXZlIGEgY29weSBpbiBEcml2ZWAgKGtlZXBzIHRoZSAuaXB5bmIgaW4gRHJpdmUpLiBFeHRyYSBiYWNrdXA6IGBGaWxlIOKGkiBEb3dubG9hZCDihpIgLmlweW5iYC4KMi4gUHJvamVjdCBmaWxlcyAoZGF0YXNldCwgbW9kZWxzKTogbW91bnQgRHJpdmUgb25jZSBwZXIgc2Vzc2lvbiDigJQKICAgYGBgcHl0aG9uCiAgIGZyb20gZ29vZ2xlLmNvbGFiIGltcG9ydCBkcml2ZQogICBkcml2ZS5tb3VudCgnL2NvbnRlbnQvZHJpdmUnKQogICBgYGAKICAgYW5kIHNhdmUgaW50byBgL2NvbnRlbnQvZHJpdmUvTXlEcml2ZS9waGlzaGluZy1wcm9qZWN0L2AgKGNyZWF0ZSB0aGUgZm9sZGVyIGluIERyaXZlIGZpcnN0KS4gQ29weSBgcGhpc2hpbmdfY2xlYW4uY3N2YCB0aGVyZS4KMy4gVHJhaW5lZCBtb2RlbHM6IGBqb2JsaWIuZHVtcChtb2RlbCwgIm5hbWUucGtsIilgIOKAlCBiZWNhdXNlIG91ciBtb2RlbHMgYXJlIHNrbGVhcm4gKipQaXBlbGluZXMqKiwgb25lIC5wa2wgaG9sZHMgdGhlIFRGLUlERiB2ZWN0b3JpemVyICsgY2xhc3NpZmllciB0b2dldGhlciwgcmVhZHkgZm9yIHRoZSBhcHAuCjQuIEdyb3VwLWZyaWVuZGx5IG9wdGlvbjogYEZpbGUg4oaSIFNhdmUgYSBjb3B5IGluIEdpdEh1YmAgaW50byBhIHJlcG8g4oCUIHZlcnNpb24gaGlzdG9yeSArIGFsbCBtZW1iZXJzIGNhbiBjbG9uZSBpdC4KCioqUnVuIGxvY2FsbHkgKFdpbmRvd3MpOioqCmBgYGJhdApweXRob24gLW0gdmVudiB2ZW52CnZlbnZcU2NyaXB0c1xhY3RpdmF0ZQpwaXAgaW5zdGFsbCBwYW5kYXM9PTIuMi4zIHNjaWtpdC1sZWFybj09MS42LjEgc3RyZWFtbGl0IGpvYmxpYgpgYGAKLSBWZXJzaW9ucyBwaW5uZWQgdG8gbWF0Y2ggdGhlIENvbGFiIGVudmlyb25tZW50IHVzZWQgZm9yIHRyYWluaW5nIChwYW5kYXMgMi4yLjMsIHNjaWtpdC1sZWFybiAxLjYuMSkgc28gcmVzdWx0cyByZXByb2R1Y2UgZXhhY3RseS4KLSBOb3RlYm9vayB3b3JrOiBvcGVuIHRoZSAuaXB5bmIgaW4gVlMgQ29kZSAvIFB5Q2hhcm0gLyBKdXB5dGVyIHdpdGggYHBoaXNoaW5nX2NsZWFuLmNzdmAgaW4gdGhlIHNhbWUgZm9sZGVyLgotIFRoZSBmaW5hbCBhcHA6IGBzdHJlYW1saXQgcnVuIGFwcC5weWAg4oaSIG9wZW5zIGF0IGBsb2NhbGhvc3Q6ODUwMWAgaW4gdGhlIGJyb3dzZXIuIFRoZSBhcHAgbG9hZHMgdGhlIGNoYW1waW9uIG1vZGVsJ3MgLnBrbCDigJQgbm8gcmV0cmFpbmluZyBuZWVkZWQgb24gdGhlIHRlYWNoZXIncyBQQyBiZXlvbmQgaW5zdGFsbGluZyB0aGUgcmVxdWlyZW1lbnRzLgo=
+# AI Semester Project — Phishing Email Detection
+## Project Documentation (living document — updated after every build step)
+
+**Team:** Muhammad Rayan Bin Waqar, Abdullah Sajid, Muhammad Mujtaba, Muzamil Shafique, Husnain, Muhammad Hassaan
+**Submitted to:** Noor Fatima
+**Platform:** Google Colab (training) · Streamlit (app, later stage)
+**Repository:** https://github.com/Rayan1156/phishing_email_detection (public; notebook saved from Colab; this documentation lives in the repo)
+**Status:** Model auditions in progress (Step 8 of the build)
+
+---
+
+## 1. Project Overview
+
+A machine-learning system that classifies emails as **Safe** or **Phishing**, built in three layers beyond a standard dataset project:
+
+1. **Model layer** — a fair, documented comparison of classic ML models, an ensemble, and a fine-tuned transformer (DistilBERT) on identical data splits.
+2. **Robustness layer** — an adversarial obfuscation test (disguised scam emails) and a self-made local test set of Pakistani scam emails (JazzCash/Easypaisa lures, Roman Urdu), written by the team as test fixtures only.
+3. **Product layer** — a working app with three input modes (paste an email, upload an .eml file, connect a Gmail account read-only) so the teacher can test the system on a real inbox, with risk scores, explanation panels, link inspection, and sender checks.
+
+## 2. Dataset
+
+- **Source:** "Phishing Email Detection" dataset (Kaggle), loaded via its Hugging Face mirror `mriadur/phishing-email-dataset` for reproducibility in Colab.
+- **Raw size:** 18,650 rows.
+- **Columns (as actually found):** `Email Text`, `Email Type` — plus a junk index column (`Unnamed: 0`). There are **no** separate sender/subject/URL columns; all signals live inside the email text. Text arrives already lowercased and tokenized.
+- **Raw class balance:** Safe Email 11,322 (60.7%) · Phishing Email 7,328 (39.3%).
+
+## 3. Data Cleaning (Step 4 — done, verified)
+
+| Action | Rows affected |
+|---|---|
+| Dropped junk index column (`Unnamed: 0`) | — |
+| Dropped missing email texts | 16 |
+| Dropped junk rows whose text is literally `null` / `empty` / blank | 536 |
+| Dropped exact duplicate emails (prevents train/test leakage) | ~563 |
+| **Final clean dataset** | **17,535 rows** |
+
+- Final balance: Safe 10,979 (62.6%) · Phishing 6,556 (37.4%).
+- Labels mapped: Safe Email → 0, Phishing Email → 1 (phishing is the positive class).
+- Clean dataset exported as `phishing_clean.csv` (group's shared file of record).
+
+## 4. Data Split (Step 5 — done, verified)
+
+**80 / 10 / 10 — Train / Validation / Test**, stratified (identical 37.4% phishing share in all three), `random_state = 42` for reproducibility.
+
+| Set | Rows | Role |
+|---|---|---|
+| Train | 14,027 | Models learn from this |
+| Validation | 1,754 | Model selection, threshold tuning, all comparisons |
+| Test | 1,754 | **Locked** — touched once, for the final reported scores |
+
+*Methodology note:* model selection is done on validation only, so the test set stays an unbiased final exam. DistilBERT fine-tuning also requires a validation set (checkpoint selection / early stopping).
+
+## 5. Evaluation Metrics
+
+Accuracy, Precision, Recall, F1, and the confusion matrix — all computed on validation during development.
+**Headline metric: Recall** (fraction of phishing emails caught), because a missed scam (false negative) costs more than a false alarm. The dangerous confusion-matrix cell is FN (bottom-left).
+
+## 6. Feature Engineering Plan
+
+- **Round 1:** word TF-IDF (1–2 grams, 5,000 features).
+- **Round 2:** word TF-IDF + character TF-IDF (`char_wb`, 3–5 grams, 5,000 features) — character chunks catch obfuscated words (`fr33`, `ver1fy`).
+- **Round 3 (planned):** handcrafted indicator features fused with TF-IDF — URL count and URL lexical features (length, digit ratio, subdomain depth, entropy, `@` tricks), urgency-keyword count, ALL-CAPS ratio, exclamation density, generic-greeting flag, and a **brand-impersonation feature** (fuzzy distance between link domains and known brands, incl. Pakistani banks/wallets).
+- **Ablation:** text-only vs indicators-only vs hybrid, to show which signal carries the detection.
+
+## 7. Results So Far (Validation Set)
+
+### Baseline — Logistic Regression, word TF-IDF (Step 6)
+Accuracy 0.9778 · Precision 0.9753 · Recall 0.9649 · F1 0.9701
+Confusion matrix: TN 1082 · FP 16 · FN 23 · TP 633 (23 scams missed of 656)
+
+### Round 1 — word TF-IDF, four models (Step 7)
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---|---|---|---|
+| **Linear SVM** | **0.9800** | 0.9755 | **0.9710** | **0.9733** |
+| Logistic Regression | 0.9778 | 0.9753 | 0.9649 | 0.9701 |
+| Random Forest | 0.9743 | **0.9796** | 0.9512 | 0.9652 |
+| Naive Bayes | 0.9658 | 0.9715 | 0.9360 | 0.9534 |
+
+*Findings:* Linear SVM leads round 1. Random Forest has the best precision (fewest false alarms) but weaker recall. Naive Bayes is the weakest detector (recall 0.936 — ~42 scams missed): simple word counting has a ceiling.
+
+### Round 2 — word + char TF-IDF (Step 8)
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---|---|---|---|
+| **Linear SVM (word+char)** | **0.9852** | 0.9802 | **0.9802** | **0.9802** |
+| Logistic Regression (word+char) | 0.9806 | 0.9814 | 0.9665 | 0.9739 |
+| Random Forest (word+char) | 0.9766 | 0.9695 | 0.9680 | 0.9687 |
+| Naive Bayes (word+char) | 0.9669 | 0.9476 | 0.9649 | 0.9562 |
+
+*Ablation finding (Round 1 → Round 2):* adding character n-grams improved **every** model's recall. SVM: F1 0.9733 → 0.9802, missed scams 19 → ~13 (FP also ~13). Naive Bayes recall jumped 0.9360 → 0.9649 — the letter-chunk features help the weakest reader most. Conclusion so far: character features earn their place; Linear SVM (word+char) is the current champion.
+
+## 8. Planned Enhancements (agreed 2026-11-23)
+
+- **Threshold tuning** on validation (precision–recall curve): deliberately trade a little precision for higher recall; the app exposes this as a sensitivity control.
+- **Probability calibration** so the app's risk percentage is meaningful.
+- **Ensemble** (soft voting over the top classic models).
+- **DistilBERT fine-tune** (3 epochs, Colab GPU) on the same splits; final comparison table classic vs transformer.
+- **Two-stage cascade in the app:** fast classic model screens everything; only uncertain cases (mid-range risk) go to DistilBERT.
+- **App-only signals:** Gmail authentication results (SPF/DKIM/DMARC) as verdict evidence — unavailable to dataset-only projects.
+- **Correction loop:** teacher overrides in the app are logged as future training data.
+
+## 9. Adversarial & Local Testing (planned)
+
+- **Adversarial test:** take phishing emails the champion model catches; obfuscate them (leetspeak, spaced letters, homoglyph/look-alike domains); re-measure recall. Question: does a cheap disguise defeat the detector, and do char features defend it?
+- **Local test set:** ~30 team-written phishing emails (JazzCash/Easypaisa, bank lures, prize scams; English + Roman Urdu) + ~15 team-written safe emails. Also planted in a demo Gmail inbox for the live app demonstration. *These are test fixtures, sent only to the team's own test account — never to real people.*
+- **Error analysis:** read the champion's false negatives and false positives; document the failure patterns.
+
+## 10. Application (planned — after the model is locked)
+
+Streamlit app, three input modes:
+1. **Paste email text** → instant verdict.
+2. **Upload .eml** → verdict with full indicator panels.
+3. **Connect Gmail** (read-only OAuth; runs locally; nothing stored) → scan recent inbox, sort by risk, CSV export.
+
+Panels: risk meter with bands · "Why" panel (top contributing words highlighted) · link inspector (real destination domains, look-alike flags) · sender check (name/domain mismatch) · urgency/lure detector incl. Pakistani-scam keyword pack · inbox dashboard.
+
+## 11. Build Log
+
+| Date | Step | Outcome |
+|---|---|---|
+| 2026-11-19 | Proposal delivered | Word proposal to Noor Fatima (dataset correction noted separately) |
+| 2026-11-23 | Scope upgraded | Gmail app + upgraded ML + adversarial/local testing agreed |
+| 2026-11-23 | Steps 1–3 | Colab set up (pandas 2.2.3, sklearn 1.6.1); dataset loaded and inspected |
+| 2026-11-23 | Steps 4–5 | Cleaned to 17,535 rows; 80/10/10 stratified split frozen |
+| 2026-11-23 | Steps 6–7 | LR baseline + round-1 race complete (SVM leads) |
+| 2026-11-23 | Step 8 | Round 2 (word+char) running |
+
+## 12. Saving the Project & Running It Locally
+
+**Golden rule:** everything inside Colab's `/content` **vanishes when the session ends**. Only three things are permanent: Google Drive, downloaded files, GitHub.
+
+**Save from Colab:**
+1. Notebook: `File → Save a copy in Drive` (keeps the .ipynb in Drive). Extra backup: `File → Download → .ipynb`.
+2. Project files (dataset, models): mount Drive once per session —
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+   and save into `/content/drive/MyDrive/phishing-project/` (create the folder in Drive first). Copy `phishing_clean.csv` there.
+3. Trained models: `joblib.dump(model, "name.pkl")` — because our models are sklearn **Pipelines**, one .pkl holds the TF-IDF vectorizer + classifier together, ready for the app.
+4. Group-friendly option: `File → Save a copy in GitHub` into a repo — version history + all members can clone it.
+
+**Run locally (Windows):**
+```bat
+python -m venv venv
+venv\Scripts\activate
+pip install pandas==2.2.3 scikit-learn==1.6.1 streamlit joblib
+```
+- Versions pinned to match the Colab environment used for training (pandas 2.2.3, scikit-learn 1.6.1) so results reproduce exactly.
+- Notebook work: open the .ipynb in VS Code / PyCharm / Jupyter with `phishing_clean.csv` in the same folder.
+- The final app: `streamlit run app.py` → opens at `localhost:8501` in the browser. The app loads the champion model's .pkl — no retraining needed on the teacher's PC beyond installing the requirements.
