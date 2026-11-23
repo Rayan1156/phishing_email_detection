@@ -88,6 +88,60 @@ Confusion matrix: TN 1082 · FP 16 · FN 23 · TP 633 (23 scams missed of 656)
 
 *Ablation finding (Round 1 → Round 2):* adding character n-grams improved **every** model's recall. SVM: F1 0.9733 → 0.9802, missed scams 19 → ~13 (FP also ~13). Naive Bayes recall jumped 0.9360 → 0.9649 — the letter-chunk features help the weakest reader most. Conclusion so far: character features earn their place; Linear SVM (word+char) is the current champion.
 
+### Round 3 — handcrafted indicators + hybrid (Step 9)
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---|---|---|---|
+| SVM (hybrid) | 0.9846 | 0.9787 | 0.9802 | 0.9794 |
+| LR (hybrid) | 0.9800 | 0.9770 | 0.9695 | 0.9732 |
+| LR (indicators only) | 0.7457 | 0.8144 | 0.4146 | 0.5495 |
+| SVM (indicators only) | 0.7195 | 0.8417 | 0.3079 | 0.4509 |
+
+*Ablation conclusion (complete three-way: text-only / indicators-only / hybrid):* on **this** dataset, the seven handcrafted indicators add **nothing** on top of word+char TF-IDF (hybrid F1 0.9794 ≈ text-only 0.9802 — a statistical tie), and alone they are weak detectors (recall 0.31–0.41: they miss most scams). Two reasons: (1) the dataset's text is pre-tokenized and lowercased, destroying several classic indicator signals (intact URLs, casing); (2) signals like urgency words are already captured by the 10,000 TF-IDF features, so the checklist adds no *new* information. **This is a genuine negative result and is reported as such.** The indicators still ship in the app — as the *explanation* layer ("why" panel) and for real emails, whose intact URLs/headers carry signals this dataset has already destroyed. **Champion remains Linear SVM (word+char), F1 0.9802.**
+
+### Ensemble — soft voting, word+char (Step 10)
+Members: calibrated Linear SVM + Logistic Regression + Random Forest + Naive Bayes, soft (probability) voting.
+**Accuracy 0.9869 · Precision 0.9803 · Recall 0.9848 · F1 0.9825** — Confusion matrix: TN 1085 · FP 13 · FN 10 · TP 646.
+
+*Finding:* the ensemble **beats every single model** — only **10 of 656 scams missed** (champion SVM missed 13) at the same 13 false alarms. Averaging four different readers cancels individual blind spots. **New champion: the ensemble.** Its calibrated probabilities also power the app's risk percentage and the threshold tuning that follows.
+
+### Threshold tuning (Step 11) — operating point LOCKED at 0.35
+Sweep on validation probabilities (ensemble):
+
+| Threshold | Precision | Recall | F1 | Missed scams |
+|---|---|---|---|---|
+| 0.30 | 0.9461 | 0.9909 | 0.9680 | 6 |
+| **0.35** | **0.9545** | **0.9909** | 0.9723 | **6** |
+| 0.40 | 0.9629 | 0.9893 | 0.9759 | 7 |
+| 0.45 | 0.9774 | 0.9878 | 0.9826 | 8 |
+| 0.50 (default) | 0.9803 | 0.9848 | 0.9825 | 10 |
+| 0.55 | 0.9861 | 0.9741 | 0.9801 | 17 |
+| 0.60 | 0.9890 | 0.9634 | 0.9761 | 24 |
+
+*Decision rule (stated before seeing results): the lowest threshold whose precision stays ≥ 0.95.* → **0.35**: catches 650/656 scams (99.1%) at ~31 false alarms, vs 10 missed at the default 0.50. F1 is marginally higher at 0.45, but the project's stated priority is recall — a missed scam costs more than a false alarm — so 0.35 is the official operating point and the app's default sensitivity.
+
+### DistilBERT fine-tune (Step 12) — validation
+3 epochs, T4 GPU, 15 min 25 s, max_length 256, identical splits (seed 42). Training loss 0.063 → 0.011; validation loss best at epoch 1 (0.046), rising slightly after (0.060, 0.058) — mild overfitting after epoch 1.
+**Accuracy 0.9892 · Precision 0.9907 · Recall 0.9802 · F1 0.9854** — Confusion matrix: TN 1092 · FP 6 · FN 13 · TP 642.
+
+*Finding:* DistilBERT takes the **F1 and precision crowns** (only 6 false alarms — half the ensemble's 13) and the best accuracy, but the ensemble keeps the **recall crown** (10 missed vs 13). The championship is therefore decided at *tuned* operating points: the ensemble @0.35 gives P 0.9545 / R 0.9909 (6 missed); DistilBERT's threshold sweep is run next under the same rule.
+*Data note:* the DistilBERT notebook's validation matrix totals 1,753 vs 1,754 in the main notebook — a one-row difference in the rebuilt pipeline, flagged for a shape check; it does not change any conclusion (all metrics verified internally consistent).
+
+### Championship — tuned operating points (validation)
+DistilBERT's extended sweep (0.05–0.30) showed its probabilities are *decisive*: precision is constant at 0.9878 across the whole range — almost no email scores in the uncertain middle. Its rule-chosen point is **0.05: P 0.9878 · R 0.9878 · F1 0.9878 · 8 missed · ~8 false alarms**.
+
+| Finalist @ tuned threshold | Precision | Recall | F1 | Missed | False alarms |
+|---|---|---|---|---|---|
+| Ensemble @0.35 | 0.9545 | **0.9909** | 0.9723 | **6** | ~31 |
+| **DistilBERT @0.05** | **0.9878** | 0.9878 | **0.9878** | 8 | **~8** |
+
+*Decision:* the ensemble catches 2 more scams of 656 (recall +0.3 pts); DistilBERT wins F1 by 1.5 pts with a quarter of the false alarms and far more decisive scores. **Champion: DistilBERT @ threshold 0.05** — CONFIRMED by Rayan 2026-11-23, with the ensemble as runner-up and the app's fast first-stage screener in the cascade design. The locked test set is opened once, for the champion's final confirmation score.
+
+### FINAL TEST RESULTS — locked test set, opened once (Step 13)
+**DistilBERT @ threshold 0.05 — Accuracy 0.9903 · Precision 0.9878 · Recall 0.9863 · F1 0.9870**
+Confusion matrix: TN 1090 · FP 8 · FN 9 · TP 647 (of 1,754 unseen emails: 9 scams missed, 8 false alarms).
+
+*Finding:* the test scores match validation almost exactly (F1 0.9870 vs 0.9878) — no generalization gap; the champion's validation numbers were honest. **The model phase of the project is closed.** Headline for the report: *99.0% accuracy, F1 0.987 on 1,754 never-seen emails.*
+
 ## 8. Planned Enhancements (agreed 2026-11-23)
 
 - **Threshold tuning** on validation (precision–recall curve): deliberately trade a little precision for higher recall; the app exposes this as a sensitivity control.
