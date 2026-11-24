@@ -142,6 +142,17 @@ Confusion matrix: TN 1090 · FP 8 · FN 9 · TP 647 (of 1,754 unseen emails: 9 s
 
 *Finding:* the test scores match validation almost exactly (F1 0.9870 vs 0.9878) — no generalization gap; the champion's validation numbers were honest. **The model phase of the project is closed.** Headline for the report: *99.0% accuracy, F1 0.987 on 1,754 never-seen emails.*
 
+### Error Analysis (2026-11-24, locked test set)
+
+Saved champion re-verified after the zip round-trip: identical matrix [[1090, 8], [9, 647]].
+
+**The 9 missed scams fall in three buckets:**
+1. **Label noise / legacy spam (~6):** insurance marketing, psychic hotline ad, penny-stock offering, a bare email-address list, a book catalogue (self-labelled "junk mail"), a dating ad, an exhibition notice. Labelled phishing by the dataset, but with no lure, credential ask, or malicious link — bulk spam of the dataset's era, read by the model (correctly, by modern definitions) as ordinary junk.
+2. **Structurally invisible (1):** "re: re: re: your document — please read the attached file." The payload was the attachment; no text model can see it. Recorded as a limitation.
+3. **One genuine failure:** a Citibank credential-phishing email scored **0.002**. Case study: 359 tokens vs the model's 256-token window — the "click the link" ask sits just inside the window, but the closing account-suspension threat (~token 305) is truncated away; the visible portion is a calm, procedural, high-quality impersonation of a bank security notice. Primary cause: tone mimicry; contributing cause: truncation. Documented mitigation (future work): 512-token window or two-window scoring for long emails. All 9 misses scored ≤ 0.036 — confidently wrong, not borderline; no threshold change fixes them.
+
+**The 8 false alarms are dominated by scam-shaped legitimate mail:** a domain-expiry urgency notice (0.95), an investment-hype newsletter (0.999), a genuine congratulations note opening with "congratulations… more money" (0.998), forwarded jokes/articles with scam-adjacent vocabulary (0.98–0.99), a spam-filtering discussion list saturated with spam vocabulary (0.671), fantasy-sports slang (0.703), and one borderline personal email at 0.106 — the single direct cost of the deliberately low 0.05 threshold. No clean professional email was flagged; the model's errors concentrate where a careful human would also pause.
+
 ## 8. Planned Enhancements (agreed 2026-11-23)
 
 - **Threshold tuning** on validation (precision–recall curve): deliberately trade a little precision for higher recall; the app exposes this as a sensitivity control.
@@ -152,10 +163,34 @@ Confusion matrix: TN 1090 · FP 8 · FN 9 · TP 647 (of 1,754 unseen emails: 9 s
 - **App-only signals:** Gmail authentication results (SPF/DKIM/DMARC) as verdict evidence — unavailable to dataset-only projects.
 - **Correction loop:** teacher overrides in the app are logged as future training data.
 
-## 9. Adversarial & Local Testing (planned)
+## 9. Adversarial & Local Testing
 
-- **Adversarial test:** take phishing emails the champion model catches; obfuscate them (leetspeak, spaced letters, homoglyph/look-alike domains); re-measure recall. Question: does a cheap disguise defeat the detector, and do char features defend it?
+- **Adversarial test (DONE 2026-11-24):** 100 validation phishing emails the champion catches at 0.05 were disguised three ways — leetspeak on 17 lure words, spaced letters on the same words, look-alike substitutions on 8 brand names — and re-scored by both finalists at their own tuned thresholds. Audit first: the disguises actually changed **45/100** (leetspeak), **45/100** (spaced), **12/100** (brands) emails — the rest contained none of the target words (a property of this 1999–2002-era dataset), so results are reported on the *changed* subsets:
+
+| Disguise | Emails changed | Champion recall | Ensemble recall |
+|---|---|---|---|
+| Leetspeak | 45 | 44/45 (0.978) | 45/45 (1.000) |
+| Spaced letters | 45 | 45/45 (1.000) | 45/45 (1.000) |
+| Look-alike brands | 12 | 12/12 (1.000) | 12/12 (1.000) |
+
+*Conclusion:* both models are robust to lure-word disguises — the ensemble's character n-grams (Round 2 hypothesis: **confirmed**) and DistilBERT's subword tokenization both see through letter-level tricks, and no model relies on single words. *Scope of the claim:* this was a word-list attack on era-typical emails; whole-text obfuscation or paraphrase attacks are untested, and brand disguises could only be tested on 12 emails — one more reason the modern local test set matters.
 - **Local test set:** ~30 team-written phishing emails (JazzCash/Easypaisa, bank lures, prize scams; English + Roman Urdu) + ~15 team-written safe emails. Also planted in a demo Gmail inbox for the live app demonstration. *These are test fixtures, sent only to the team's own test account — never to real people.*
+
+### Local test results (2026-11-24) — 45 fixtures, scored subject+body (sender withheld from the models by design)
+Fixtures drafted at the team's request (30 phishing: JazzCash 5, Easypaisa 4, bank 5, prize 4, job 4, Roman Urdu 6, courier 2; 15 safe incl. genuine-style bank/security alerts), file `local_test_set.csv`.
+
+| | Champion (BERT @0.05) | Ensemble (@0.35) |
+|---|---|---|
+| Phishing caught | **29/30** | **29/30** |
+| Roman Urdu lures caught | **6/6** | **6/6** |
+| Safe wrongly flagged | **3/15** | 7/15 |
+
+*Findings:*
+- **Roman Urdu generalizes:** neither model ever trained on Roman Urdu, yet both caught all 6 lures (BERT risks 0.99–1.00) — structure, links, CNIC/PIN asks and English loanwords carry the signal across the language barrier.
+- **The shared miss is the best-written scam:** a formal fake university job posting (BERT 0.005) — bureaucratic register is camouflage; both models missed only it.
+- **The champion's precision advantage is decisive on modern mail:** the ensemble false-flagged genuine HBL/Google security alerts (0.74–0.85) that BERT cleared at 0.00–0.01 — word-counting fires on security vocabulary; the transformer reads context. This vindicates the championship on out-of-distribution data.
+- **OTP mail is guilty by association:** BERT flagged the *genuine* never-share OTP message (0.994) as readily as the share-your-OTP phishing twin (0.997) — text alone cannot read the instruction difference. Also flagged: a utility bill (payment-instruction structure) and a cash-on-delivery shipping notice. These are exactly the cases the app's **sender/domain verification layer** (withheld from this text-only test by design) exists to rescue.
+- Leetspeak pass over the local phishing set: champion still catches **28/30**.
 - **Error analysis:** read the champion's false negatives and false positives; document the failure patterns.
 
 ## 10. Application (planned — after the model is locked)
@@ -176,7 +211,13 @@ Panels: risk meter with bands · "Why" panel (top contributing words highlighted
 | 2026-11-23 | Steps 1–3 | Colab set up (pandas 2.2.3, sklearn 1.6.1); dataset loaded and inspected |
 | 2026-11-23 | Steps 4–5 | Cleaned to 17,535 rows; 80/10/10 stratified split frozen |
 | 2026-11-23 | Steps 6–7 | LR baseline + round-1 race complete (SVM leads) |
-| 2026-11-23 | Step 8 | Round 2 (word+char) running |
+| 2026-11-23 | Step 8 | Round 2 complete — word+char SVM leads (F1 0.9802) |
+| 2026-11-23 | Step 9 | Round 3 ablation — indicators add nothing on this dataset (negative result, documented) |
+| 2026-11-23 | Steps 10–11 | Ensemble F1 0.9825; threshold locked at 0.35 by the precision ≥ 0.95 rule |
+| 2026-11-23 | Step 12 | DistilBERT fine-tuned (3 epochs, T4) — validation F1 0.9854 @0.50 |
+| 2026-11-23 | Championship | DistilBERT crowned @0.05 (val F1 0.9878); ensemble = runner-up / app screener |
+| 2026-11-23 | Step 13 | **Locked test set: Acc 0.9903, F1 0.9870 — model phase closed** |
+| 2026-11-23 | Repo | Both notebooks + this documentation pushed to GitHub; models + dataset backed up to PC/Drive |
 
 ## 12. Saving the Project & Running It Locally
 
